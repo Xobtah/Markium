@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Markium</title>
+
+        <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+        <!-- Golden-Layout -->
+        <script type="text/javascript" src="../node_modules/golden-layout/lib/jquery.js"></script>
+        <!--<script>window.$ = window.jQuery = require('../node_modules/golden-layout/lib/jquery.js');</script>-->
+        <script type="text/javascript" src="../node_modules/golden-layout/dist/goldenlayout.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="../node_modules/golden-layout/src/css/goldenlayout-base.css">
+        <link type="text/css" rel="stylesheet" href="../node_modules/golden-layout/src/css/goldenlayout-dark-theme.css">
+        <link type="text/css" rel="stylesheet" href="css/gl-css.css">
+        <script type="text/javascript" src="js/golden-layout.cfg.js"></script>
+
+        <!-- ImgAreaSelect -->
+        <link rel="stylesheet" type="text/css" href="../jquery.imgareaselect-0.9.10/css/imgareaselect-default.css">
+        <script type="text/javascript" src="../jquery.imgareaselect-0.9.10/scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="../jquery.imgareaselect-0.9.10/scripts/jquery.imgareaselect.pack.js"></script>
+
+        <!-- jsTree -->
+        <link rel="stylesheet" href="../node_modules/jstree/dist/themes/default/style.min.css">
+        <script src="../node_modules/jstree/dist/jstree.min.js"></script>
+
+        <!-- Angular -->
+        <script src="../node_modules/angular/angular.js"></script>
+
+        <!-- Markium -->
+        <script src="js/JSONPreviewModule.js"></script>
+        <script src="js/ImageViewerModule.js"></script>
+        <script src="js/ImageSelectorAreaModule.js"></script>
+        <script src="js/PreviewModule.js"></script>
+        <script src="js/FieldsModule.js"></script>
+
+        <script>if (window.module) module = window.module;</script>
+    </head>
+    <body>
+        <template id="imageViewer">
+            <div ng-controller="imageViewerController">
+                <img id="pic" src="personnages.png">
+            </div>
+        </template>
+
+        <template id="jsonPreview">
+            <div ng-controller="jsonPreviewController">
+                <div id="jstree"></div>
+            </div>
+        </template>
+
+        <template id="imageSelectorArea">
+            <div ng-controller="imageSelectorAreaController">
+                <h2>Height: <input type="number" ng-model="imgSelectArea.height" size="20%"></h2>
+                <h2>Width: <input type="number" ng-model="imgSelectArea.width" size="20%"></h2>
+                <h2>TopLeft: [<input type="number" ng-model="imgSelectArea.x1" size="2">, <input type="number" ng-model="imgSelectArea.y1" size="2">]</h2>
+                <h2>BottomRight: [<input type="number" ng-model="imgSelectArea.x2" size="2">, <input type="number" ng-model="imgSelectArea.y2" size="2">]</h2>
+            </div>
+        </template>
+
+        <template id="preview">
+            <div ng-controller="previewController">
+                <center><img id="imgPreview" src="personnages.png"></center>
+            </div>
+        </template>
+
+        <template id="fields">
+            <div ng-controller="fieldsController">
+                <center><button ng-if="currentNode">New Field</button></center>
+            </div>
+        </template>
+    </body>
+</html>

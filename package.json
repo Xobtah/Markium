@@ -1,0 +1,27 @@
+{
+  "name": "markium",
+  "version": "1.0.0",
+  "description": "JavaScript animation engine",
+  "main": "app.js",
+  "scripts": {
+    "elec": "electron .",
+    "build": "electron-packager ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xobtah/Markium.git"
+  },
+  "author": "Sylvain Garant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xobtah/Markium/issues"
+  },
+  "homepage": "https://github.com/Xobtah/Markium#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "electron": "^1.6.11",
+    "golden-layout": "^1.5.8",
+    "jquery": "^3.2.1",
+    "jstree": "^3.3.4"
+  }
+}
